@@ -1,0 +1,16 @@
+<section>
+  <h2 class="text-2xl text-slate-700">Survey Results</h2>
+   <hr class="my-4" />
+  <div>
+    <form phx-change="age_group_filter" phx-target={@myself}>
+      <.input
+        type="select"
+        options={["all", "18 and under", "18 to 25", "25 to 35", "35 and up"]}
+        name="age_group_filter"
+        label="Filter by age group:"
+        value={@age_group_filter}
+      />
+    </form>
+     <%= @chart_svg %>
+  </div>
+</section>

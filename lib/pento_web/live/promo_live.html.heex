@@ -1,0 +1,14 @@
+<h2 class="font-semibold text-2xl pb-4">Send Your Promo Code to a Friend!</h2>
+
+<h4>
+  Enter your friend's email below and we'll send them a
+  promo code for 10% off their first game purchase!
+</h4>
+
+<.simple_form for={@changeset} phx-change="validate" id="promo-form" phx-submit="save">
+  <.input field={@changeset[:first_name]} label="First Name:" phx-debounce="blur" />
+  <.input field={@changeset[:email]} label="Email:" type="email" phx-debounce="blur" />
+  <:actions>
+    <.button phx-disable-with="Sending Promo...">Send Promo</.button>
+  </:actions>
+</.simple_form>

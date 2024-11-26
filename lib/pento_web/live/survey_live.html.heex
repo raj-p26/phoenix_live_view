@@ -1,0 +1,23 @@
+<section>
+  <h2 class="text-3xl mb-4">Survey</h2>
+   <hr class="border mb-4" />
+  <%= if @demographic do %>
+    <.live_component
+      module={DemographicLive.ShowComponent}
+      demographic={@demographic}
+      id={"demographic-#{@demographic.id}"}
+    />
+    <.live_component
+      module={RatingLive.IndexComponent}
+      id={"ratings-#{Enum.random(1..1000)}"}
+      products={@products}
+      user={@current_user}
+    />
+  <% else %>
+    <.live_component
+      module={DemographicLive.FormComponent}
+      id={"survey-form-#{@current_user.id}"}
+      user={@current_user}
+    />
+  <% end %>
+</section>

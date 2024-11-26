@@ -1,0 +1,25 @@
+<h1 class="text-2xl">Your Score: <%= @score %></h1>
+
+<h2 class="text-xl">
+  <%= @message %>
+</h2>
+
+<h2>
+  <%= for n <- 1..10 do %>
+    <a
+      href="#"
+      class="text-blue-500 hover:underline text-lg"
+      phx-click="guess"
+      phx-value-number={n}
+    >
+      <%= n %>
+    </a>
+  <% end %>
+   <br />
+  <.link
+    patch={~p"/guess/restart"}
+    class="text-slate-900 hover:text-slate-700 hover:underline text-lg"
+  >
+    Restart
+  </.link>
+</h2>
