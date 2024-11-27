@@ -27,6 +27,10 @@ defmodule PentoWeb.SurveyResultsLive.Index do
     {:noreply, socket}
   end
 
+  defp assign_age_group_filter(%{assigns: %{age_group_filter: filter}} = socket) do
+    assign(socket, :age_group_filter, filter)
+  end
+
   defp assign_age_group_filter(socket) do
     assign(socket, :age_group_filter, "all")
   end
